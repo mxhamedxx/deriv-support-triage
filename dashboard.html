@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support Triage | Agent Queue</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6f9;color:#16243a;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.5}
+header{background:#101d35;color:white;padding:28px max(20px,calc((100% - 1060px)/2))}header h1{margin:0;font-size:25px}header p{color:#c7d4ea;margin:6px 0 0}
+main{max-width:1060px;margin:auto;padding:25px 18px 60px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric,.panel,.ticket{background:white;border:1px solid #e4e9f1;border-radius:12px;padding:16px;box-shadow:0 2px 5px #14233d0b}.number{font-weight:750;font-size:28px;color:#254fa1}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:18px;margin-top:22px}.controls{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 16px}select,input{border:1px solid #ced7e4;border-radius:8px;background:white;padding:10px;min-width:145px}input{flex:1;min-width:190px}.ticket{margin-bottom:12px}.ticket-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.id{font-size:12px;font-weight:700;color:#536680}.pill{margin-left:auto;background:#e9effd;color:#284b8c;border-radius:20px;padding:4px 9px;font-size:12px}.message{color:#4d5d71}.meta{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:#5b6b7c}.meta b{color:#273e61}.corrected{color:#9b5b14;font-weight:700}.reply{background:#eef4ff;border-radius:8px;padding:11px 13px;margin-top:13px}.reply p{margin:5px 0 0;font-size:14px}.panel h3{margin:0 0 8px;font-size:15px}.panel ul{padding-left:18px;word-break:break-word}li{font-size:13px;margin:6px 0}.hint{font-size:12px;color:#62718a}.empty{display:none;padding:20px;text-align:center}
+@media(max-width:740px){.metrics{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}}
+</style></head><body>
+<header><h1>Support Triage — Agent Queue</h1><p>Post-review classifications and suggested replies</p></header>
+<main><section class="metrics"><div class="metric"><div class="number">4</div><div>Total tickets</div></div><div class="metric"><div class="number">1</div><div>Urgent</div></div><div class="metric"><div class="number">0</div><div>Human corrected</div></div><div class="metric"><div class="number">4</div><div>Destinations</div></div></section>
+<div class="layout"><section><h2>Assigned Tickets</h2><div class="controls">
+<input id="search" placeholder="Search ticket, subject or reply" aria-label="Search tickets">
+<select id="category" aria-label="Category"><option value="">All categories</option><option value="billing_issue">billing_issue</option><option value="account_access">account_access</option><option value="product_how_to">product_how_to</option><option value="bug_report">bug_report</option><option value="other">other</option></select>
+<select id="priority" aria-label="Priority"><option value="">All priorities</option><option value="urgent">urgent</option><option value="high">high</option><option value="normal">normal</option><option value="low">low</option></select>
+<select id="route" aria-label="Queue"><option value="">All queues</option><option value="payments_queue">payments_queue</option><option value="trust_and_access_queue">trust_and_access_queue</option><option value="general_support_queue">general_support_queue</option><option value="technical_queue">technical_queue</option><option value="manual_review_queue">manual_review_queue</option></select>
+</div><div id="tickets"><article class="ticket" data-category="billing_issue" data-priority="high" data-route="payments_queue">
+  <div class="ticket-head"><span class="id">T-1001</span><strong>Charged twice for my deposit</strong><span class="pill">high</span></div>
+  <p class="message">Hi, I made one deposit this morning but I can see two charges on my bank card. Please help reverse the extra charge.</p>
+  <div class="meta"><span>Category: <b>billing_issue</b></span><span>Route: <b>payments_queue</b></span></div>
+  <div class="reply"><b>Suggested reply</b><p>Hello, thank you for reaching out. We apologize for the inconvenience caused by the duplicate charge. Our payments team is currently reviewing your account and deposit history to investigate this transaction. We will follow up with you as soon as we have an update.</p></div>
+</article>
+<article class="ticket" data-category="account_access" data-priority="urgent" data-route="trust_and_access_queue">
+  <div class="ticket-head"><span class="id">T-1002</span><strong>Can’t log in after resetting password</strong><span class="pill">urgent</span></div>
+  <p class="message">I reset my password and now the app keeps saying invalid credentials. I need access urgently before market open.</p>
+  <div class="meta"><span>Category: <b>account_access</b></span><span>Route: <b>trust_and_access_queue</b></span></div>
+  <div class="reply"><b>Suggested reply</b><p>Hello, thank you for contacting us. We understand how important it is for you to regain access quickly. Our team is actively reviewing your account to resolve the credential issue. In the meantime, please ensure no extra spaces are entered when typing your credentials or try using a private browsing window.</p></div>
+</article>
+<article class="ticket" data-category="product_how_to" data-priority="normal" data-route="general_support_queue">
+  <div class="ticket-head"><span class="id">T-1003</span><strong>How do I export my transaction history?</strong><span class="pill">normal</span></div>
+  <p class="message">I need a CSV of my transaction history for accounting. Where can I download it from?</p>
+  <div class="meta"><span>Category: <b>product_how_to</b></span><span>Route: <b>general_support_queue</b></span></div>
+  <div class="reply"><b>Suggested reply</b><p>Hello, thank you for contacting support. You can download your transaction history by logging into your account, navigating to the &#x27;Transactions&#x27; or &#x27;History&#x27; section, and selecting the option to export or download as CSV. Please let us know if you need any additional assistance finding this feature.</p></div>
+</article>
+<article class="ticket" data-category="bug_report" data-priority="high" data-route="technical_queue">
+  <div class="ticket-head"><span class="id">T-1004</span><strong>App crashes when I open portfolio</strong><span class="pill">high</span></div>
+  <p class="message">The mobile app closes every time I tap the portfolio tab. I already updated to the latest version.</p>
+  <div class="meta"><span>Category: <b>bug_report</b></span><span>Route: <b>technical_queue</b></span></div>
+  <div class="reply"><b>Suggested reply</b><p>Hello, thank you for bringing this to our attention. We apologize for the frustration caused by the app crashing. Our technical team is investigating this issue with the portfolio tab. In the meantime, you may be able to access your portfolio via our web platform. We will update you once resolved.</p></div>
+</article></div><p class="empty" id="empty">No tickets match these filters.</p></section>
+<aside class="panel"><h3>Queue destinations</h3><ul><li>payments_queue: <strong>1</strong></li><li>trust_and_access_queue: <strong>1</strong></li><li>general_support_queue: <strong>1</strong></li><li>technical_queue: <strong>1</strong></li></ul><h3>Final categories</h3><ul><li>billing_issue: <strong>1</strong></li><li>account_access: <strong>1</strong></li><li>product_how_to: <strong>1</strong></li><li>bug_report: <strong>1</strong></li></ul>
+<p class="hint">This is a read-only dashboard. Ticket corrections are performed in the mandatory terminal review checkpoint before generating this page.</p></aside></div></main>
+<script>
+const items=Array.from(document.querySelectorAll('.ticket'));
+const inputs=['search','category','priority','route'].map(id=>document.getElementById(id));
+function filterTickets(){const [search,category,priority,route]=inputs.map(x=>x.value.toLowerCase());let count=0;
+for(const t of items){const show=t.textContent.toLowerCase().includes(search)&&(!category||t.dataset.category===category)&&(!priority||t.dataset.priority===priority)&&(!route||t.dataset.route===route);t.style.display=show?'':'none';if(show)count++}
+document.getElementById('empty').style.display=count?'none':'block';}
+inputs.forEach(i=>i.addEventListener('input',filterTickets));
+</script></body></html>

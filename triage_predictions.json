@@ -1,0 +1,34 @@
+[
+  {
+    "ticket_id": "T-1001",
+    "category": "billing_issue",
+    "priority": "high",
+    "reason": "Customer reports being charged twice for a single deposit and requests assistance resolving the duplicate charge.",
+    "suggested_reply": "Hello, thank you for reaching out. We apologize for the inconvenience caused by the duplicate charge. Our payments team is currently reviewing your account and deposit history to investigate this transaction. We will follow up with you as soon as we have an update.",
+    "route_to": "payments_queue"
+  },
+  {
+    "ticket_id": "T-1002",
+    "category": "account_access",
+    "priority": "urgent",
+    "reason": "Customer is completely locked out of their account after a password reset and requires time-sensitive access before market open.",
+    "suggested_reply": "Hello, thank you for contacting us. We understand how important it is for you to regain access quickly. Our team is actively reviewing your account to resolve the credential issue. In the meantime, please ensure no extra spaces are entered when typing your credentials or try using a private browsing window.",
+    "route_to": "trust_and_access_queue"
+  },
+  {
+    "ticket_id": "T-1003",
+    "category": "product_how_to",
+    "priority": "normal",
+    "reason": "Customer is asking for instructions on where and how to export their transaction history as a CSV file.",
+    "suggested_reply": "Hello, thank you for contacting support. You can download your transaction history by logging into your account, navigating to the 'Transactions' or 'History' section, and selecting the option to export or download as CSV. Please let us know if you need any additional assistance finding this feature.",
+    "route_to": "general_support_queue"
+  },
+  {
+    "ticket_id": "T-1004",
+    "category": "bug_report",
+    "priority": "high",
+    "reason": "Customer reports a recurring application crash preventing access to the portfolio tab on the latest app version.",
+    "suggested_reply": "Hello, thank you for bringing this to our attention. We apologize for the frustration caused by the app crashing. Our technical team is investigating this issue with the portfolio tab. In the meantime, you may be able to access your portfolio via our web platform. We will update you once resolved.",
+    "route_to": "technical_queue"
+  }
+]
